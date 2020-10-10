@@ -1,1 +1,1 @@
-worker: python v2.py
+worker: python quotestationtwitterbot.py
