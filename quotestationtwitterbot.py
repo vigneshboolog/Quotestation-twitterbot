@@ -47,7 +47,7 @@ def random_quote_generator():
 							end=time.time()
 							#ts=random.randint(900,5400)-(end-begin)
 							time.sleep(300)
-						hashtag = "#"+current+"Quote \n"
+						hashtag = "#"+current.capitalize()+"Quote \n"
 						api.update_status(hashtag+quote+'\n                                                                -'+author)
 						print('updated')
 						used_quotes.append(compileddata)
@@ -78,7 +78,7 @@ def random_quote_generator():
 						time.sleep(300)
 						print(quote)
 						print('      -',author)
-						hashtag = "#"+current+"Quote \n"
+						hashtag = "#"+current.capitalize()+"Quote \n"
 						api.update_status(hashtag+quote,'\n                                                                -',author)
 						print('updated')
 						used_quotes.append(compileddata)
