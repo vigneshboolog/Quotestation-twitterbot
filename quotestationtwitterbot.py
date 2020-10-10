@@ -38,28 +38,15 @@ def random_quote_generator():
 				try:
 					raw=raw_data.text.split('\n')
 					quote=(raw[1].strip())
-					author=(raw[4].strip())
-					try:
-						author.strip('"')
-					except:
-						pass
-					try:
-						author.strip(',')
-					except:
-						pass
+					author=(raw[4].strip('", '))	
 					compileddata=[quote,author]
 					if compileddata in used_quotes or len(quote)<10:
 						continue
 					else:
 						if used_quotes!=[]:
 							end=time.time()
-							ts=random.randint(900,5400)-(end-begin)
-							time.sleep(ts)
-
-
-						#print(quote)
-						#print('      -',author)
-						#print('\n',current)
+							#ts=random.randint(900,5400)-(end-begin)
+							#time.sleep(ts)
 						api.update_status(quote+'\n                                                                -'+author)
 						print('updated')
 						used_quotes.append(compileddata)
@@ -79,23 +66,15 @@ def random_quote_generator():
 				try:
 					raw=raw_data.text.split('\n')
 					quote=(raw[1].strip())
-					author=(raw[4].strip())
-					try:
-						author.strip('"')
-					except:
-						pass
-					try:
-						author.strip(',')
-					except:
-						pass
+					author=(raw[4].strip('", '))
 					compileddata=[quote,author]
 					if compileddata in used_quotes:
 						continue
 					else:
 
 						end=time.time()
-						ts=random.randint(900,5400)-(end-begin)
-						time.sleep(ts)
+						#ts=random.randint(900,5400)-(end-begin)
+						#time.sleep(ts)
 						print(quote)
 						print('      -',author)
 						api.update_status(quote,'\n                                                                -',author)
